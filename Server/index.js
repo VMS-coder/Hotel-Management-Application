@@ -10,6 +10,11 @@ const roomRoutes = require("./routes/rooms");
 
 const app = express();
 
+
+const adminRoutes = require("./routes/admin");
+
+require("./jobs/bookingExpiry");
+
 // Middleware
 app.use(cors({
   origin: process.env.CLIENT_URL || "http://localhost:5173"
@@ -29,6 +34,7 @@ app.get("/", (req, res) => {
 app.use("/api/auth", authRoutes);
 app.use("/api/rooms", roomRoutes);
 app.use("/api/bookings", bookingRoutes);
+app.use("/api/admin", adminRoutes);
 // 404 handler
 app.use((req, res) => {
   res.status(404).json({

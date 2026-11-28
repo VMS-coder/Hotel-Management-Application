@@ -42,7 +42,6 @@ function AddRoom({ onRoomAdded }) {
     try {
       setLoading(true);
 
-      // Create FormData
       const formData = new FormData();
 
       formData.append("title", room.title);
@@ -50,18 +49,14 @@ function AddRoom({ onRoomAdded }) {
       formData.append("price", room.price);
       formData.append("maxPeople", room.maxPeople);
 
-      // Convert room numbers into array
       const numbers = room.roomNumbers
         .split(",")
         .map((num) => num.trim())
         .filter(Boolean);
 
       formData.append("roomNumbers", JSON.stringify(numbers));
-
-      // Add image
       formData.append("image", image);
 
-      // Send request to backend
       const response = await API.post("/rooms", formData, {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -101,14 +96,21 @@ function AddRoom({ onRoomAdded }) {
       <form onSubmit={handleSubmit} className="add-room-form">
 
         <label>Room Title</label>
-        <input
-          type="text"
+        <select
           name="title"
-          placeholder="Enter room title"
           value={room.title}
           onChange={handleChange}
           required
-        />
+        >
+          <option value="">Select Room Type</option>
+          <option value="Single Room">Single Room</option>
+          <option value="Double Room">Double Room</option>
+          <option value="Deluxe Room">Deluxe Room</option>
+          <option value="Luxury Room">Luxury Room</option>
+          <option value="Suite Room">Suite Room</option>
+          <option value="Family Room">Family Room</option>
+          <option value="Executive Room">Executive Room</option>
+        </select>
 
         <label>Description</label>
         <textarea

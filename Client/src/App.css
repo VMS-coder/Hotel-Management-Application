@@ -1,0 +1,353 @@
+
+/* Main application */
+.app-container {
+  min-height: 100vh;
+}
+
+/* Global section */
+.page-container {
+  width: 92%;
+  max-width: 1350px;
+  margin: 40px auto;
+}
+
+.section-title {
+  font-size: 30px;
+  font-weight: 800;
+  color: #172b4d;
+  margin-bottom: 10px;
+}
+
+.section-description {
+  color: #64748b;
+  margin-bottom: 30px;
+}
+
+/* Common buttons */
+.primary-btn {
+  background: linear-gradient(120deg, #2457a7, #3679d5);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(36, 87, 167, 0.2);
+}
+
+/* Authentication pages */
+.auth-page {
+  min-height: calc(100vh - 75px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: white;
+}
+
+.auth-visual {
+  background: linear-gradient(145deg, #142c52, #2866b7);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-visual::before,
+.auth-visual::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.07);
+}
+
+.auth-visual::before {
+  width: 350px;
+  height: 350px;
+  top: -100px;
+  left: -100px;
+}
+
+.auth-visual::after {
+  width: 280px;
+  height: 280px;
+  bottom: -100px;
+  right: -70px;
+}
+
+.auth-visual-content {
+  position: relative;
+  z-index: 1;
+  max-width: 480px;
+}
+
+.auth-illustration {
+  font-size: 110px;
+  margin-bottom: 25px;
+}
+
+.auth-visual h1 {
+  font-size: 38px;
+  font-weight: 800;
+  margin-bottom: 18px;
+  color: white;
+}
+
+.auth-visual p {
+  color: #dbeafe;
+  line-height: 1.8;
+}
+
+.auth-form-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 45px 30px;
+}
+
+.auth-form-wrapper {
+  width: 100%;
+  max-width: 430px;
+}
+
+.auth-form-wrapper h2 {
+  font-size: 30px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: #172b4d;
+}
+
+.auth-subtitle {
+  color: #64748b;
+  margin-bottom: 30px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.auth-form label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: -10px;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 14px 15px;
+  border: 1px solid #dce3ed;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.auth-form input:focus {
+  border-color: #3679d5;
+  box-shadow: 0 0 0 3px rgba(54,121,213,0.1);
+}
+
+.auth-submit {
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 700;
+  background: linear-gradient(120deg, #2457a7, #3679d5);
+  margin-top: 8px;
+}
+
+.auth-submit:hover {
+  opacity: 0.9;
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: 25px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.auth-footer a {
+  color: #2457a7;
+  font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .auth-page {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-visual {
+    min-height: 250px;
+    padding: 30px 20px;
+  }
+
+  .auth-illustration {
+    font-size: 55px;
+    margin-bottom: 10px;
+  }
+
+  .auth-visual h1 {
+    font-size: 25px;
+  }
+
+  .auth-visual p {
+    font-size: 13px;
+  }
+
+  .auth-form-section {
+    padding: 40px 22px;
+  }
+
+  .auth-form-wrapper h2 {
+    font-size: 26px;
+  }
+
+  .page-container {
+    width: 94%;
+  }
+}
+
+/* HotelPro Navigation */
+.hotel-navbar {
+  background: white;
+  min-height: 75px;
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.06);
+}
+
+.hotel-nav-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hotel-brand {
+  font-size: 26px;
+  font-weight: 800;
+  color: #17396f;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.hotel-brand:hover {
+  color: #2457a7;
+}
+
+.brand-icon {
+  font-size: 28px;
+}
+
+.hotel-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.hotel-nav-link {
+  color: #475569;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.hotel-nav-link:hover,
+.hotel-nav-link.active {
+  color: #2457a7;
+}
+
+.nav-register-btn,
+.nav-logout-btn {
+  padding: 11px 22px;
+  border-radius: 7px;
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  color: white;
+  background: #2457a7;
+}
+
+.nav-register-btn:hover {
+  background: #17396f;
+  color: white;
+}
+
+.nav-logout-btn {
+  background: #e74c3c;
+}
+
+.nav-logout-btn:hover {
+  background: #c0392b;
+}
+
+.nav-toggle {
+  display: none;
+  border: none;
+  background: transparent;
+  padding: 7px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px;
+  background: #17396f;
+  border-radius: 3px;
+}
+
+@media (max-width: 768px) {
+  .hotel-navbar {
+    padding: 15px 5%;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .hotel-nav-container {
+    flex-wrap: wrap;
+  }
+
+  .hotel-nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+    padding: 22px 0 10px;
+  }
+
+  .hotel-nav-links.show {
+    display: flex;
+  }
+
+  .hotel-nav-link {
+    padding: 5px 0;
+  }
+
+  .nav-register-btn,
+  .nav-logout-btn {
+    text-align: center;
+  }
+}

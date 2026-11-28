@@ -8,6 +8,7 @@ import Admin from "./pages/Admin";
 import Rooms from "./pages/Rooms";
 import RoomDetails from "./pages/RoomDetails";
 import UserDashboard from "./pages/UserDashboard";
+import "./App.css";
 function App() {
   return (
     <BrowserRouter>
